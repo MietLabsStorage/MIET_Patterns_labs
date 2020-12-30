@@ -5,7 +5,7 @@ namespace Cars
     public abstract class BoardAnyCars
     {
         public Driver Driver { get; protected set; }
-        public List<string> Passenger { get; } = new List<string>();
+        public List<Passenger.Passenger> Passenger { get; } = new List<Passenger.Passenger>();
 
         /// <summary>
         /// board driver in car
@@ -18,8 +18,8 @@ namespace Cars
         /// </summary>
         /// <param name="passengers">list of passengers</param>
         /// <returns>passengers who not board</returns>
-        public abstract List<string> BoardPassenger(List<string> passengers);
-
+        public abstract List<Passenger.Passenger> BoardPassenger(List<Passenger.Passenger> passengers);
+        
         /// <summary>
         /// check is can car drive
         /// </summary>

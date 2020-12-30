@@ -18,7 +18,7 @@ namespace Cars
         /// </summary>
         /// <param name="passengers">list of passengers</param>
         /// <returns>passengers who not board</returns>
-        public override List<string> BoardPassenger(List<string> passengers)
+        public override List<Passenger.Passenger> BoardPassenger(List<Passenger.Passenger> passengers)
         {
             int k = 0;
             while (Passenger.Count < 30 && k < passengers.Count)

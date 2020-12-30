@@ -5,13 +5,19 @@ namespace Cars
 {
     class Program
     {
+        //READ THIS
+        //not add in lab 2 : "Child armchair", "Different price"
         static void Main(string[] args)
         {
-            Console.WriteLine("Abstract factory and singleton demonstration::");
-            List<string> passengers = new List<string>() {"Michel", "Jack", "Lui", "Mary", "Ingrid", "Anna", "Eugine"};
-            List<string> nonPassengers = new List<string>();
+            List<Passenger.Passenger> taxiPassengers = new List<Passenger.Passenger>();
+            List<Passenger.Passenger> busPassengers = new List<Passenger.Passenger>();
+            List<Passenger.Passenger> nonPassengers = new List<Passenger.Passenger>();
             
+            //generate lists of passengers by builders
+            taxiPassengers.AddRange(Passenger.Passengers.GeneratePassengers(new Passenger.TaxiPassengersBuilder(), 7));
+            busPassengers.AddRange(Passenger.Passengers.GeneratePassengers(new Passenger.BusPassengersBuilder(), 33));
             
+            //work with taxi (demonstrate abstract factory and singleton)
             BoardTaxi taxi = new BoardTaxi();
             Console.WriteLine("\tCan taxi drive? " + taxi.IsCanDrive());
             Console.WriteLine("\tAppoint John taxi-driver");
@@ -23,19 +29,19 @@ namespace Cars
             Console.WriteLine("\t\tCurrent taxi-driver: " + taxi.Driver);
             Console.WriteLine("\tSit passengers into taxi");
             nonPassengers.Clear();
-            nonPassengers.AddRange(taxi.BoardPassenger(passengers));
+            nonPassengers.AddRange(taxi.BoardPassenger(taxiPassengers));
             Console.WriteLine("\tIn taxi: ");
-            foreach (string person in taxi.Passenger)
+            foreach (Passenger.Passenger person in taxi.Passenger)
             {
                 Console.WriteLine("\t\t" + person);
             }
             Console.WriteLine("\tNot in taxi: ");
-            foreach (string person in nonPassengers)
+            foreach (Passenger.Passenger person in nonPassengers)
             {
                 Console.WriteLine("\t\t" + person);
             }
             
-            
+            //work with bus (demonstrate abstract factory and singleton)
             BoardBus bus = new BoardBus();
             Console.WriteLine("\tCan bus drive? " + bus.IsCanDrive());
             Console.WriteLine("\tAppoint Bill bus-driver");
@@ -47,22 +53,15 @@ namespace Cars
             Console.WriteLine("\t\tCurrent bus-driver: " + bus.Driver);
             Console.WriteLine("\tSit passengers into bus");
             nonPassengers.Clear();
-            for (int i = 0; i < 6; i++)
-            {
-                List<string> items = bus.BoardPassenger(passengers);
-                if (items.Count != 0)
-                {
-                    nonPassengers.AddRange(items);
-                }
-            }
+            nonPassengers.AddRange(bus.BoardPassenger(busPassengers));
             Console.WriteLine("\tIn bus: ");
             int count = 0;
-            foreach (string person in bus.Passenger)
+            foreach (Passenger.Passenger person in bus.Passenger)
             {
                 Console.WriteLine("\t\t" + count++ + " " + person);
             }
             Console.WriteLine("\tNot in bus: ");
-            foreach (string person in nonPassengers)
+            foreach (Passenger.Passenger person in nonPassengers)
             {
                 Console.WriteLine("\t\t" + person);
             }
