@@ -13,8 +13,10 @@ namespace Cars
             
             
             BoardTaxi taxi = new BoardTaxi();
+            Console.WriteLine("\tCan taxi drive? " + taxi.IsCanDrive());
             Console.WriteLine("\tAppoint John taxi-driver");
             taxi.BoardDriver("John");
+            Console.WriteLine("\tCan taxi drive? " + taxi.IsCanDrive());
             Console.WriteLine("\t\tCurrent taxi-driver: " + taxi.Driver);
             Console.WriteLine("\tTry appoint Bill taxi-driver");
             taxi.BoardDriver("Bill");
@@ -35,8 +37,10 @@ namespace Cars
             
             
             BoardBus bus = new BoardBus();
+            Console.WriteLine("\tCan bus drive? " + bus.IsCanDrive());
             Console.WriteLine("\tAppoint Bill bus-driver");
             bus.BoardDriver("Bill");
+            Console.WriteLine("\tCan bus drive? " + bus.IsCanDrive());
             Console.WriteLine("\t\tCurrent bus-driver: " + bus.Driver);
             Console.WriteLine("\tTry appoint John bus-driver");
             bus.BoardDriver("John");
