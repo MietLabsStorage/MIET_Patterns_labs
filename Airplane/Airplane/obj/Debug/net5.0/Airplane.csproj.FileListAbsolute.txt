@@ -1,0 +1,16 @@
+C:\Users\maksi\Desktop\6 семестр\Patterns\Airplane\Airplane\bin\Debug\net5.0\Airplane.exe
+C:\Users\maksi\Desktop\6 семестр\Patterns\Airplane\Airplane\bin\Debug\net5.0\Airplane.deps.json
+C:\Users\maksi\Desktop\6 семестр\Patterns\Airplane\Airplane\bin\Debug\net5.0\Airplane.runtimeconfig.json
+C:\Users\maksi\Desktop\6 семестр\Patterns\Airplane\Airplane\bin\Debug\net5.0\Airplane.runtimeconfig.dev.json
+C:\Users\maksi\Desktop\6 семестр\Patterns\Airplane\Airplane\bin\Debug\net5.0\Airplane.dll
+C:\Users\maksi\Desktop\6 семестр\Patterns\Airplane\Airplane\bin\Debug\net5.0\ref\Airplane.dll
+C:\Users\maksi\Desktop\6 семестр\Patterns\Airplane\Airplane\bin\Debug\net5.0\Airplane.pdb
+C:\Users\maksi\Desktop\6 семестр\Patterns\Airplane\Airplane\obj\Debug\net5.0\Airplane.csprojAssemblyReference.cache
+C:\Users\maksi\Desktop\6 семестр\Patterns\Airplane\Airplane\obj\Debug\net5.0\Airplane.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\maksi\Desktop\6 семестр\Patterns\Airplane\Airplane\obj\Debug\net5.0\Airplane.AssemblyInfoInputs.cache
+C:\Users\maksi\Desktop\6 семестр\Patterns\Airplane\Airplane\obj\Debug\net5.0\Airplane.AssemblyInfo.cs
+C:\Users\maksi\Desktop\6 семестр\Patterns\Airplane\Airplane\obj\Debug\net5.0\Airplane.csproj.CoreCompileInputs.cache
+C:\Users\maksi\Desktop\6 семестр\Patterns\Airplane\Airplane\obj\Debug\net5.0\Airplane.dll
+C:\Users\maksi\Desktop\6 семестр\Patterns\Airplane\Airplane\obj\Debug\net5.0\ref\Airplane.dll
+C:\Users\maksi\Desktop\6 семестр\Patterns\Airplane\Airplane\obj\Debug\net5.0\Airplane.pdb
+C:\Users\maksi\Desktop\6 семестр\Patterns\Airplane\Airplane\obj\Debug\net5.0\Airplane.genruntimeconfig.cache

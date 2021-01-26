@@ -1,0 +1,16 @@
+H:\Patterns\Cars\Cars\bin\Debug\net5.0\Cars.exe
+H:\Patterns\Cars\Cars\bin\Debug\net5.0\Cars.deps.json
+H:\Patterns\Cars\Cars\bin\Debug\net5.0\Cars.runtimeconfig.json
+H:\Patterns\Cars\Cars\bin\Debug\net5.0\Cars.runtimeconfig.dev.json
+H:\Patterns\Cars\Cars\bin\Debug\net5.0\Cars.dll
+H:\Patterns\Cars\Cars\bin\Debug\net5.0\ref\Cars.dll
+H:\Patterns\Cars\Cars\bin\Debug\net5.0\Cars.pdb
+H:\Patterns\Cars\Cars\obj\Debug\net5.0\Cars.csprojAssemblyReference.cache
+H:\Patterns\Cars\Cars\obj\Debug\net5.0\Cars.GeneratedMSBuildEditorConfig.editorconfig
+H:\Patterns\Cars\Cars\obj\Debug\net5.0\Cars.AssemblyInfoInputs.cache
+H:\Patterns\Cars\Cars\obj\Debug\net5.0\Cars.AssemblyInfo.cs
+H:\Patterns\Cars\Cars\obj\Debug\net5.0\Cars.csproj.CoreCompileInputs.cache
+H:\Patterns\Cars\Cars\obj\Debug\net5.0\Cars.dll
+H:\Patterns\Cars\Cars\obj\Debug\net5.0\ref\Cars.dll
+H:\Patterns\Cars\Cars\obj\Debug\net5.0\Cars.pdb
+H:\Patterns\Cars\Cars\obj\Debug\net5.0\Cars.genruntimeconfig.cache

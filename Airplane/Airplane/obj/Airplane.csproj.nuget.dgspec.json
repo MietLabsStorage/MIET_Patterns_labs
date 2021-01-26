@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\maksi\\Desktop\\6 семестр\\Patterns\\Cars\\Cars\\Cars.csproj": {}
+    "C:\\Users\\maksi\\Desktop\\6 семестр\\Patterns\\Airplane\\Airplane\\Airplane.csproj": {}
   },
   "projects": {
-    "C:\\Users\\maksi\\Desktop\\6 семестр\\Patterns\\Cars\\Cars\\Cars.csproj": {
+    "C:\\Users\\maksi\\Desktop\\6 семестр\\Patterns\\Airplane\\Airplane\\Airplane.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\maksi\\Desktop\\6 семестр\\Patterns\\Cars\\Cars\\Cars.csproj",
-        "projectName": "Cars",
-        "projectPath": "C:\\Users\\maksi\\Desktop\\6 семестр\\Patterns\\Cars\\Cars\\Cars.csproj",
+        "projectUniqueName": "C:\\Users\\maksi\\Desktop\\6 семестр\\Patterns\\Airplane\\Airplane\\Airplane.csproj",
+        "projectName": "Airplane",
+        "projectPath": "C:\\Users\\maksi\\Desktop\\6 семестр\\Patterns\\Airplane\\Airplane\\Airplane.csproj",
         "packagesPath": "C:\\Users\\maksi\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\maksi\\Desktop\\6 семестр\\Patterns\\Cars\\Cars\\obj\\",
+        "outputPath": "C:\\Users\\maksi\\Desktop\\6 семестр\\Patterns\\Airplane\\Airplane\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Microsoft\\Xamarin\\NuGet\\"
+          "C:\\Microsoft\\Xamarin\\NuGet"
         ],
         "configFilePaths": [
           "C:\\Users\\maksi\\AppData\\Roaming\\NuGet\\NuGet.Config",
