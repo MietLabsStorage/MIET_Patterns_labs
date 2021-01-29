@@ -1,0 +1,7 @@
+C:\Users\maksi\Desktop\6 семестр\Patterns\Decanat\Decanat\obj\Debug\Decanat.csprojAssemblyReference.cache
+C:\Users\maksi\Desktop\6 семестр\Patterns\Decanat\Decanat\obj\Debug\Decanat.csproj.CoreCompileInputs.cache
+C:\Users\maksi\Desktop\6 семестр\Patterns\Decanat\Decanat\bin\Debug\Decanat.exe.config
+C:\Users\maksi\Desktop\6 семестр\Patterns\Decanat\Decanat\bin\Debug\Decanat.exe
+C:\Users\maksi\Desktop\6 семестр\Patterns\Decanat\Decanat\bin\Debug\Decanat.pdb
+C:\Users\maksi\Desktop\6 семестр\Patterns\Decanat\Decanat\obj\Debug\Decanat.exe
+C:\Users\maksi\Desktop\6 семестр\Patterns\Decanat\Decanat\obj\Debug\Decanat.pdb
