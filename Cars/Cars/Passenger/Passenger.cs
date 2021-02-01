@@ -8,7 +8,7 @@ namespace Cars.Passenger
         public string Name { get; init; }
 
         //constructor
-        protected Passenger(string name)
+        public Passenger(string name)
         {
             Name = name;
         }

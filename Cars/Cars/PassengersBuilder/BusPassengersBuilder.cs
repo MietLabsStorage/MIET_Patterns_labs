@@ -1,12 +1,17 @@
-namespace Cars.Passenger
+using System.Collections.Generic;
+using Cars.Passenger;
+
+namespace Cars.PassengersBuilder
 {
-    public class BusPassengersBuilder: PassengersBuilder
+    public class BusPassengersBuilder: PassengersBuilder.IPassengersBuilder
     {
+        public List<Passenger.Passenger> Passengers { get; }
+
         /// <summary>
         /// add adult passenger
         /// </summary>
         /// <param name="passenger">adult passenger</param>
-        public override void AddAdult(Adult passenger)
+        public void AddAdult(Adult passenger)
         {
             Passengers.Add(passenger);
         }
@@ -15,7 +20,7 @@ namespace Cars.Passenger
         /// add child passenger
         /// </summary>
         /// <param name="passenger">child passenger</param>
-        public override void AddChild(Child passenger)
+        public void AddChild(Child passenger)
         {
             Passengers.Add(passenger);
         }
@@ -24,7 +29,7 @@ namespace Cars.Passenger
         /// add preferential passenger
         /// </summary>
         /// <param name="passenger">preferential passenger</param>
-        public override void AddPreferential(Preferential passenger)
+        public void AddPreferential(Preferential passenger)
         {
             Passengers.Add(passenger);
         }

@@ -14,7 +14,7 @@
         "outputPath": "C:\\Users\\maksi\\Desktop\\6 семестр\\Patterns\\Cars\\Cars\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Microsoft\\Xamarin\\NuGet\\"
+          "C:\\Microsoft\\Xamarin\\NuGet"
         ],
         "configFilePaths": [
           "C:\\Users\\maksi\\AppData\\Roaming\\NuGet\\NuGet.Config",

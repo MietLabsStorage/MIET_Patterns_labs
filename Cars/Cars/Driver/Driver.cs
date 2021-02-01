@@ -1,17 +1,26 @@
+using System;
+
 namespace Cars
 {
     public abstract class Driver
     {
-        // name of driver
-        private string Name { get; }
+        protected string Name { get; }
         protected string DrivingLicense { get; init; } 
         
-        //constructor
-        private protected Driver(string name)
+        protected static Driver _instance;
+
+        protected Driver(String name)
         {
             Name = name;
         }
 
+        /// <summary>
+        /// get instance
+        /// </summary>
+        /// <param name="name">name of driver</param>
+        /// <returns>instance</returns>
+        public abstract Driver Instance(String name);
+        
         /// <summary>
         /// override method: for show name of driver
         /// </summary>

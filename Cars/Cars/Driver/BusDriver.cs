@@ -1,20 +1,24 @@
+using System;
+
 namespace Cars
 {
     public class BusDriver: Driver
     {
-        private static BusDriver _instance;
-
-        private BusDriver(string name) : base(name)
+        /// <summary>
+        /// constructor
+        /// </summary>
+        /// <param name="name">driver's name</param>
+        public BusDriver(string name) : base(name)
         {
             DrivingLicense = "D";
         }
-
+        
         /// <summary>
-        /// get instance of driver
+        /// get instance
         /// </summary>
-        /// <param name="name"></param>
-        /// <returns></returns>
-        public static BusDriver Instance(string name)
+        /// <param name="name">name of driver</param>
+        /// <returns>instance</returns>
+        public override Driver Instance(String name)
         {
             return _instance ??= new BusDriver(name);
         }

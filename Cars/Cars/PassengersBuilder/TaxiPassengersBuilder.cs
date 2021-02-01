@@ -1,14 +1,18 @@
 using System;
+using System.Collections.Generic;
+using Cars.Passenger;
 
-namespace Cars.Passenger
+namespace Cars.PassengersBuilder
 {
-    public class TaxiPassengersBuilder: PassengersBuilder
+    public class TaxiPassengersBuilder: PassengersBuilder.IPassengersBuilder
     {
+        public List<Passenger.Passenger> Passengers { get; }
+
         /// <summary>
         /// add adult passenger
         /// </summary>
         /// <param name="passenger">adult passenger</param>
-        public override void AddAdult(Adult passenger)
+        public void AddAdult(Adult passenger)
         {
             Passengers.Add(passenger);
         }
@@ -17,7 +21,7 @@ namespace Cars.Passenger
         /// add child passenger
         /// </summary>
         /// <param name="passenger">child passenger</param>
-        public override void AddChild(Child passenger)
+        public void AddChild(Child passenger)
         {
             Passengers.Add(passenger);
         }
@@ -26,6 +30,9 @@ namespace Cars.Passenger
         /// nothing work
         /// </summary>
         /// <param name="passenger">nothing</param>
-        public override void AddPreferential(Preferential passenger) { }
+        public void AddPreferential(Preferential passenger)
+        {
+            throw new NotImplementedException("Can\'t add preferential for taxi");
+        }
     }
 }

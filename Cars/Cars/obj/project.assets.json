@@ -9,7 +9,7 @@
   },
   "packageFolders": {
     "C:\\Users\\maksi\\.nuget\\packages\\": {},
-    "C:\\Microsoft\\Xamarin\\NuGet\\": {}
+    "C:\\Microsoft\\Xamarin\\NuGet": {}
   },
   "project": {
     "version": "1.0.0",
@@ -21,7 +21,7 @@
       "outputPath": "C:\\Users\\maksi\\Desktop\\6 семестр\\Patterns\\Cars\\Cars\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "C:\\Microsoft\\Xamarin\\NuGet\\"
+        "C:\\Microsoft\\Xamarin\\NuGet"
       ],
       "configFilePaths": [
         "C:\\Users\\maksi\\AppData\\Roaming\\NuGet\\NuGet.Config",

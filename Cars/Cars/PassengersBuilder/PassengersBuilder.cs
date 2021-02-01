@@ -1,13 +1,14 @@
 using System.Collections.Generic;
+using Cars.Passenger;
 
-namespace Cars.Passenger
+namespace Cars.PassengersBuilder
 {
-    public abstract class PassengersBuilder
+    public interface IPassengersBuilder
     {
         /// <summary>
         /// Passengers
         /// </summary>
-        public List<Passenger> Passengers { get; } = new List<Passenger>();
+        public List<Passenger.Passenger> Passengers { get; }
 
         /// <summary>
         /// add adult passenger
