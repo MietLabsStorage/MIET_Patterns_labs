@@ -5,7 +5,7 @@ namespace Cars.PassengersBuilder
 {
     public class BusPassengersBuilder: PassengersBuilder.IPassengersBuilder
     {
-        public List<Passenger.Passenger> Passengers { get; }
+        public List<Passenger.Passenger> Passengers { get; } = new List<Passenger.Passenger>();
 
         /// <summary>
         /// add adult passenger

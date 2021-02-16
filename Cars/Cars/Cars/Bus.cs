@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using Cars.BoardCars;
 using Cars.Passenger;
 using Cars.PassengersBuilder;
@@ -14,14 +15,11 @@ namespace Cars.Cars
         public Bus(string carNum) : base(carNum)
         {
         }
+        
 
-        /// <summary>
-        /// constructor
-        /// </summary>
-        /// <param name="carNum">unique car number</param>
-        /// <param name="name">name of driver</param>
-        public Bus(string carNum, string name) : base(carNum, name)
+        protected override Driver DriverInstance(string name)
         {
+            return Driver ??= BoardBus.Instance().BoardDriver(name);
         }
 
         /// <summary>
@@ -30,20 +28,18 @@ namespace Cars.Cars
         /// <param name="name">driver name</param>
         public override void BoardDriver(string name)
         {
-            if (Driver != null)
-            {
-                Driver = new BoardBus().BoardDriver(name);
-            }
+            DriverInstance(name);
         }
 
         /// <summary>
         /// board passengers
         /// </summary>
         /// <param name="addingAmount">count of peoples in generating queue</param>
-        public override void BoardPassengers(int addingAmount)
+        public override List<Passenger.Passenger> BoardPassengers(int addingAmount)
         {
-            Passengers.AddRange(new BoardBus().
-                BoardPassenger(Passengers.Count, new BusQueue(addingAmount).GeneratePassengers(new BusPassengersBuilder())));
+            List<Passenger.Passenger> busQueue = new BusQueue(addingAmount).GeneratePassengers(new BusPassengersBuilder());
+            Passengers.AddRange(BoardBus.Instance().BoardPassenger(Passengers.Count, ref busQueue));
+            return busQueue;
         }
 
         /// <summary>
@@ -51,7 +47,7 @@ namespace Cars.Cars
         /// </summary>
         /// <param name="passenger"></param>
         /// <returns>cost</returns>
-        public override int Cost(Passenger.Passenger passenger)
+        public override double Cost(Passenger.Passenger passenger)
         {
             switch (passenger)
             {

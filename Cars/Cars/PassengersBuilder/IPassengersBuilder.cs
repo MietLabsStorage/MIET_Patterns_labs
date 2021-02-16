@@ -8,7 +8,7 @@ namespace Cars.PassengersBuilder
         /// <summary>
         /// Passengers
         /// </summary>
-        public List<Passenger.Passenger> Passengers { get; }
+        public abstract List<Passenger.Passenger> Passengers { get; }
 
         /// <summary>
         /// add adult passenger

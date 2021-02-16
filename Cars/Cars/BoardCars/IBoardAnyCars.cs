@@ -4,6 +4,7 @@ namespace Cars.BoardCars
 {
     public interface IBoardAnyCars
     {
+      
         /// <summary>
         /// board driver in car
         /// </summary>
@@ -16,7 +17,7 @@ namespace Cars.BoardCars
         /// <param name="congestion">count of peoples in car</param>
         /// <param name="queue">queue to car</param>
         /// <returns></returns>
-        List<Passenger.Passenger> BoardPassenger(int congestion, List<Passenger.Passenger> queue);
+        List<Passenger.Passenger> BoardPassenger(int congestion, ref List<Passenger.Passenger> queue);
         
     }
 }

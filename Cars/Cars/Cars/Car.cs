@@ -13,6 +13,8 @@ namespace Cars.Cars
         /// Driver
         /// </summary>
         public Driver Driver { get; protected set; } = null;
+        
+        protected abstract Driver DriverInstance(string name);
 
         /// <summary>
         /// Passengers
@@ -36,27 +38,20 @@ namespace Cars.Cars
         /// <exception cref="Exception">car number not unique</exception>
         public Car(String carNum)
         {
-            if (_allCarNums.All(x => x != carNum))
+            if (carNum != "")
             {
-                CarNum = carNum;
-                _allCarNums.Add(carNum);
-            }
-            else
-            {
-                throw new Exception($"{carNum} is already registered num for other car");
+                if (_allCarNums.All(x => x != carNum))
+                {
+                    CarNum = carNum;
+                    _allCarNums.Add(carNum);
+                }
+                else
+                {
+                    throw new Exception($"{carNum} is already registered num for other car");
+                }
             }
         }
-
-        /// <summary>
-        /// constructor
-        /// </summary>
-        /// <param name="carNum">unique car number</param>
-        /// <param name="name">name of driver</param>
-        public Car(String carNum, String name): this(carNum)
-        {
-            Driver = new BoardBus().BoardDriver(name);
-        }
-
+        
         /// <summary>
         /// board driver
         /// </summary>
@@ -67,18 +62,18 @@ namespace Cars.Cars
         /// board passengers
         /// </summary>
         /// <param name="addingAmount">count of peoples in generating queue</param>
-        public abstract void BoardPassengers(int addingAmount);
+        public abstract List<Passenger.Passenger> BoardPassengers(int addingAmount);
 
         /// <summary>
         /// cost for ride for passenger
         /// </summary>
         /// <param name="passenger"></param>
         /// <returns>cost</returns>
-        public abstract int Cost(Passenger.Passenger passenger);
+        public abstract double Cost(Passenger.Passenger passenger);
 
         public override string ToString()
         {
-            return $"{CarNum}. driver: {Driver}";
+            return $"{CarNum}. driver: {Driver}; passengers: {Passengers.Count}";
         }
     }
 }

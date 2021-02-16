@@ -9,7 +9,7 @@ namespace Cars.Cars
 {
     public class Taxi : Car
     {
-        private bool ChildChairsExisting { get; set; }
+        public bool ChildChairsExisting { get; set; }
 
         /// <summary>
         /// constructor
@@ -18,14 +18,10 @@ namespace Cars.Cars
         public Taxi(string carNum) : base(carNum)
         {
         }
-
-        /// <summary>
-        /// constructor
-        /// </summary>
-        /// <param name="carNum">unique car number</param>
-        /// <param name="name">name of driver</param>
-        public Taxi(string carNum, string name) : base(carNum, name)
+        
+        protected override Driver DriverInstance(string name)
         {
+            return Driver ??=  BoardTaxi.Instance().BoardDriver(name);
         }
 
         /// <summary>
@@ -34,21 +30,19 @@ namespace Cars.Cars
         /// <param name="name">driver name</param>
         public override void BoardDriver(string name)
         {
-            if (Driver != null)
-            {
-                Driver = new BoardTaxi().BoardDriver(name);
-            }
+            DriverInstance(name);
         }
 
         /// <summary>
         /// board passengers
         /// </summary>
         /// <param name="addingAmount">count of peoples in generating queue</param>
-        public override void BoardPassengers(int addingAmount)
+        public override List<Passenger.Passenger> BoardPassengers(int addingAmount)
         {
             List<Passenger.Passenger> tmp = new List<Passenger.Passenger>();
-            foreach (var pretender in new BoardBus().BoardPassenger(Passengers.Count,
-                new TaxiQueue(addingAmount).GeneratePassengers(new TaxiPassengersBuilder())))
+            List<Passenger.Passenger> taxiQueue =
+                new TaxiQueue(addingAmount).GeneratePassengers(new TaxiPassengersBuilder());
+            foreach (var pretender in BoardTaxi.Instance().BoardPassenger(Passengers.Count, ref taxiQueue))
             {
                 if (pretender is Adult)
                 {
@@ -75,6 +69,7 @@ namespace Cars.Cars
                 }
             }
             Passengers.AddRange(tmp);
+            return taxiQueue;
         }
 
         /// <summary>
@@ -82,11 +77,11 @@ namespace Cars.Cars
         /// </summary>
         /// <param name="passenger"></param>
         /// <returns>cost</returns>
-        public override int Cost(Passenger.Passenger passenger)
+        public override double Cost(Passenger.Passenger passenger)
         {
             try
             {
-                return 150 / Passengers.Count;
+                return 150.0 / this.Passengers.Count;
             }
             catch (Exception e)
             {
