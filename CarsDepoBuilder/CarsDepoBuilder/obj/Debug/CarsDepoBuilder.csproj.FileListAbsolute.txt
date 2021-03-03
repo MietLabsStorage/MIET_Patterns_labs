@@ -1,0 +1,6 @@
+C:\Users\maksi\Desktop\6 семестр\Patterns\CarsDepoBuilder\CarsDepoBuilder\bin\Debug\CarsDepoBuilder.exe
+C:\Users\maksi\Desktop\6 семестр\Patterns\CarsDepoBuilder\CarsDepoBuilder\bin\Debug\CarsDepoBuilder.pdb
+C:\Users\maksi\Desktop\6 семестр\Patterns\CarsDepoBuilder\CarsDepoBuilder\obj\Debug\CarsDepoBuilder.csprojAssemblyReference.cache
+C:\Users\maksi\Desktop\6 семестр\Patterns\CarsDepoBuilder\CarsDepoBuilder\obj\Debug\CarsDepoBuilder.csproj.CoreCompileInputs.cache
+C:\Users\maksi\Desktop\6 семестр\Patterns\CarsDepoBuilder\CarsDepoBuilder\obj\Debug\CarsDepoBuilder.exe
+C:\Users\maksi\Desktop\6 семестр\Patterns\CarsDepoBuilder\CarsDepoBuilder\obj\Debug\CarsDepoBuilder.pdb
