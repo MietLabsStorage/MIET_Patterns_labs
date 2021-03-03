@@ -9,7 +9,7 @@ namespace CarsDepoFactory
 {
     public class Voyage
     {
-        private List<Car> Cars { get; } = new List<Car>();
+        public List<Car> Cars { get; } = new List<Car>();
 
         /// <summary>
         /// constructor

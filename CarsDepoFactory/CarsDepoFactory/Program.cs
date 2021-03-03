@@ -51,6 +51,9 @@ namespace CarsDepoFactory
             Console.WriteLine(BoardBus.BoardCarInstance());
             
             
+            
+            
+            
             List<Passenger> taxiQueue = new List<Passenger>();
             for (int i = 0; i < 140; i++)
             {
@@ -72,6 +75,8 @@ namespace CarsDepoFactory
             Console.WriteLine(taxiVoyage);
             Console.WriteLine(BoardTaxi.BoardCarInstance());
 
+            
+            
 
 
             List<Passenger> queue = new List<Passenger>();
