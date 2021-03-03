@@ -15,6 +15,7 @@ namespace Airplane
         /// <param name="type">type of leaf (name of class)</param>
         protected Leaf(string name, int baggageWeight, string type) : base(name, baggageWeight, type)
         {
+            
         }
         
         /// <summary>
@@ -36,5 +37,6 @@ namespace Airplane
         {
             throw new System.NotImplementedException();
         }
+        
     }
 }

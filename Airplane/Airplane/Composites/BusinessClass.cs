@@ -8,7 +8,7 @@ namespace Airplane.Composites
         /// <summary>
         /// constructor
         /// </summary>
-        public BusinessClass() : base(typeof(BusinessClass).ToString(), typeof(BusinessClass).ToString(), 20)
+        public BusinessClass(int capacity = 20) : base(typeof(BusinessClass).ToString(), typeof(BusinessClass).ToString(), capacity)
         {
         }
         

@@ -9,7 +9,7 @@ namespace Airplane.Leafs
         /// <summary>
         /// constructor
         /// </summary>
-        /// <param name="name">name of stewardwss</param>
+        /// <param name="name">name of stewardess</param>
         public Stewardess(string name) : base(name, 0, typeof(Stewardess).ToString())
         {
             IsBaggageLoad = false;

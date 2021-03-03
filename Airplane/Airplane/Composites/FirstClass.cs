@@ -8,7 +8,7 @@ namespace Airplane.Composites
         /// <summary>
         /// constructor
         /// </summary>
-        public FirstClass() : base(typeof(FirstClass).ToString(), typeof(FirstClass).ToString(), 10)
+        public FirstClass(int capacity = 10) : base(typeof(FirstClass).ToString(), typeof(FirstClass).ToString(), capacity)
         {
             
         }

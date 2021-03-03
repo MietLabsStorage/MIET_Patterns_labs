@@ -7,13 +7,13 @@ namespace Airplane
     {
         static void Main(string[] args)
         {
-            Plane plane = new Plane(300);
+            Plane Plane = new Plane("Win", typeof(Plane).ToString(), 150);
 
-            plane.Pilots.Add(new Pilot("Peter J."));
-            plane.Pilots.Add(new Pilot("John L."));
+            Plane["Pilots"].Add(new Pilot("Peter J."));
+            Plane["Pilots"].Add(new Pilot("John L."));
             try
             {
-                plane.Pilots.Add(new Pilot("John L."));
+                Plane["Pilots"].Add(new Pilot("John L."));
             }
             catch(Exception e)
             {
@@ -22,20 +22,21 @@ namespace Airplane
             
             try
             {
-                plane.Stewardess.Add(new Passenger("Adam E.",0));
+                Plane["Stewardess"].Add(new Passenger("Adam E.",0));
             }
             catch(Exception e)
             {
                 Console.WriteLine(e.Message);
             }
             
-            plane.FirstClass.Add(new Passenger("Sir J.", 250));
-            plane.BusinessClass.Add(new Passenger("Mr G.", 150));
-            plane.EconomyClass.Add(new Passenger("Joe Q.", 100));
-            plane.EconomyClass.Add(new Passenger("Bill S.", 80));
-            Console.WriteLine(plane.IsCanFlyUp);
+            Plane["FirstClass"].Add(new Passenger("Sir J.", 55));
+            Plane["BusinessClass"].Add(new Passenger("Mr G.", 50));
+            Plane["EconomyClass"].Add(new Passenger("Joe Q.", 40));
+            Plane["EconomyClass"].Add(new Passenger("Bill S.", 28));
+            Plane["EconomyClass"].Add(new Passenger("Lui R.", 28));
+            Console.WriteLine(Plane.IsCanFlyUp);
             
-            Console.WriteLine(plane.LoadMap);
+            Console.WriteLine(Plane.LoadMap);
         }
     }
 }

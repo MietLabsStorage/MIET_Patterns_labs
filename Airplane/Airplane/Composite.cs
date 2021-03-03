@@ -14,7 +14,7 @@ namespace Airplane
         /// <summary>
         /// capacity for adding components in this composite
         /// </summary>
-        private int Capacity { get; init; }
+        private int Capacity { get;  set; }
 
         /// <summary>
         /// constructor
@@ -24,6 +24,7 @@ namespace Airplane
         /// <param name="capacity">capacity for adding components in this composite</param>
         protected Composite(string name, string type, int capacity) : base(name, 0, type)
         {
+            //p.s. 0 - baggageWeight is just plug
             Capacity = capacity;
         }
 

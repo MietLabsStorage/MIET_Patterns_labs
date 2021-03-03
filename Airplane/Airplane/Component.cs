@@ -5,16 +5,16 @@ namespace Airplane
         /// <summary>
         /// name of component
         /// </summary>
-        public string Name { get; private init; }
+        public string Name { get; private set; }
         
         /// <summary>
         /// weight of baggage of component
         /// </summary>
-        public virtual int BaggageWeight { get; private init; }
+        public virtual int BaggageWeight { get; private set; }
         
         /// <summary>
         /// is baggage load;
-        /// default: true
+        /// default - true
         /// </summary>
         public bool IsBaggageLoad { get; protected set; }
         
@@ -32,7 +32,7 @@ namespace Airplane
         public Component(string name, int baggageWeight, string type)
         {
             Name = name;
-            BaggageWeight = baggageWeight;
+            BaggageWeight = (baggageWeight > 5 && baggageWeight < 60 ) ? baggageWeight : 0;
             IsBaggageLoad = true;
             Id = GenerateID(type);
         }

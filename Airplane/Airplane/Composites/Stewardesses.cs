@@ -7,7 +7,7 @@ namespace Airplane.Composites
         /// <summary>
         /// constructor
         /// </summary>
-        public Stewardesses() : base(typeof(Stewardesses).ToString(), typeof(Stewardesses).ToString(), 2)
+        public Stewardesses(int capacity = 6) : base(typeof(Stewardesses).ToString(), typeof(Stewardesses).ToString(), capacity)
         {
         }
 

@@ -8,7 +8,7 @@ namespace Airplane.Composites
         /// <summary>
         /// constructor
         /// </summary>
-        public EconomyClass() : base(typeof(EconomyClass).ToString(), typeof(EconomyClass).ToString(), 150)
+        public EconomyClass(int capacity = 150) : base(typeof(EconomyClass).ToString(), typeof(EconomyClass).ToString(), capacity)
         {
         }
         
@@ -23,7 +23,7 @@ namespace Airplane.Composites
             {
                 base.Add(c);
                 ((Passenger) c).PaidPartOfBaggage -=
-                    ((Passenger) c).PaidPartOfBaggage < 35 ? ((Passenger) c).PaidPartOfBaggage : 25;
+                    ((Passenger) c).PaidPartOfBaggage < 20 ? ((Passenger) c).PaidPartOfBaggage : 20;
 
             }
             catch (Exception e)

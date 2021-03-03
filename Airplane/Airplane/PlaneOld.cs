@@ -6,18 +6,18 @@ using Airplane.Leafs;
 
 namespace Airplane
 {
-    public class Plane
+    public class PlaneOld
     {
         /// <summary>
         /// constructor
         /// </summary>
         /// <param name="maxBaggageWeight">max weight for baggage</param>
-        public Plane(int maxBaggageWeight)
+        public PlaneOld(int maxBaggageWeight)
         {
             MaxBaggageWeight = maxBaggageWeight;
         }
         
-        private int MaxBaggageWeight { get; init; }
+        private int MaxBaggageWeight { get; set; }
 
         public FirstClass FirstClass { get; } = new FirstClass();
         public EconomyClass EconomyClass { get; } = new EconomyClass();
@@ -45,13 +45,15 @@ namespace Airplane
                 }
 
                 string map =
+                    $"*****Load map*****\n" + 
                     $"Limit weight baggage: {MaxBaggageWeight}\n" +
                     $"{BusinessClass.GetType().ToString()} baggage weight: {BusinessClass.BaggageWeight}\n" +
                     $"{FirstClass.GetType().ToString()} baggage weight: {FirstClass.BaggageWeight}\n" +
                     $"{EconomyClass.GetType().ToString()} baggage weight: {EconomyClass.BaggageWeight}\n" +
                     $"Is can fly up: {IsCanFlyUp}\n" +
                     $"Weight of reset baggage: {resetWeight}\n" +
-                    $"Passengers with resetting baggage:\n {passengersWithResetBaggage}";
+                    $"Passengers with resetting baggage:\n {passengersWithResetBaggage}" +
+                    $"******************";
                 
                 return map;
             }
