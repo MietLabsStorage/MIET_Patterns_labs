@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ContentModelStore">
+    <e p="C:\Users\maksi\AppData\Local\JetBrains\Rider2020.3\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\maksi\AppData\Local\JetBrains\Rider2020.3\resharper-host\Local\Transient\Rider\v203\SolutionCaches\_NewCarDepoBuilder.-650067799.00" t="ExcludeRecursive" />
+    <e p="C:\Users\maksi\Desktop\6 семестр\Patterns\NewCarDepoBuilder" t="IncludeFlat">
+      <e p="NewCarDepoBuilder" t="IncludeRecursive">
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="Builders" t="Include">
+          <e p="BusBuilder.cs" t="Include" />
+          <e p="IBuilder.cs" t="Include" />
+          <e p="TaxiBuilder.cs" t="Include" />
+        </e>
+        <e p="Cars" t="Include">
+          <e p="Bus.cs" t="Include" />
+          <e p="Car.cs" t="Include" />
+          <e p="Taxi.cs" t="Include" />
+        </e>
+        <e p="Director.cs" t="Include" />
+        <e p="Drivers" t="Include">
+          <e p="BusDriver.cs" t="Include" />
+          <e p="Driver.cs" t="Include" />
+          <e p="TaxiDriver.cs" t="Include" />
+        </e>
+        <e p="NewCarDepoBuilder.csproj" t="IncludeRecursive" />
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="Passengers" t="Include">
+          <e p="Adult.cs" t="Include" />
+          <e p="Child.cs" t="Include" />
+          <e p="Passenger.cs" t="Include" />
+          <e p="Preferential.cs" t="Include" />
+        </e>
+        <e p="Program.cs" t="Include" />
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+        </e>
+        <e p="Store" t="Include">
+          <e p="DriverStore.cs" t="Include" />
+          <e p="PassengerStore.cs" t="Include" />
+        </e>
+      </e>
+      <e p="NewCarDepoBuilder.sln" t="IncludeFlat" />
+      <e p="packages" t="ExcludeRecursive" />
+    </e>
+  </component>
+</project>
