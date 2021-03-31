@@ -9,7 +9,8 @@ namespace Drawer
         public bool IsDragged { get; }
 
         private Vector2i _mouseCoordinates;
-        public Vector2i MouseCoordinates { get; }
+
+        public Vector2i MouseCoordinates { get => _mouseCoordinates; }
 
         public void Drag()
         {
@@ -32,20 +33,32 @@ namespace Drawer
         {
             Position = new Vector2f((float) (mouseCoordinates.X - Size.X / 2),
                 (float) (mouseCoordinates.Y - Size.Y / 2));
-        }
-
-        public Vector2f Position
-        {
-            get => Sprite.Position;
-            set => Sprite.Position = new Vector2f(value.X, value.Y);
+            if (Sprite != null)
+            { 
+                Sprite.Position = Position; 
+            }
         }
 
         public Vector2i Size { get; set; }
-        public Sprite Sprite { get; set; }
 
-        public Texture Texture { get; set; }
+        private string File { get; set; }
+        private Sprite Sprite { get; set; }
+        public Drawable Drawable 
+        {
+            get
+            {
+                if(Sprite == null)
+                {
+                    Texture Texture = new Texture(File);
+                    Sprite = new Sprite(Texture, new IntRect(new Vector2i(0, 0), Size));
+                    Sprite.Position = new Vector2f(Position.X, Position.Y);
 
-        public void Update()
+                }
+                return Sprite;
+            }
+        }
+
+        public void Update(object e)
         {
             if (_isDraged) Move(_mouseCoordinates);
         }
@@ -53,11 +66,12 @@ namespace Drawer
         public ImageBox(Vector2f position, Vector2i size, string file)
         {
             Size = new Vector2i(size.X, size.Y);
-            Texture = new Texture(file);
-            Sprite = new Sprite(Texture, new IntRect(new Vector2i(0, 0), (Vector2i) Texture.Size))
-            {
-                Position = new Vector2f(position.X, position.Y)
-            };
+            File = file;
+            Position = position;                    
         }
+
+        public Vector2f Position { get; set; }
+
+
     }
 }

@@ -18,17 +18,12 @@ namespace Drawer
         /// <summary>
         /// 
         /// </summary>
-        Sprite Sprite { get; set; }
-        
-        /// <summary>
-        /// 
-        /// </summary>
-        Texture Texture { get; set; }
+        Drawable Drawable { get; }
         
         /// <summary>
         /// update
         /// </summary>
-        void Update();
+        void Update(object e);
         
         
     }

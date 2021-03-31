@@ -17,21 +17,28 @@ namespace Drawer
         {
             Window = new RenderWindow(new VideoMode(800, 600), "NoProxy");
             Window.Closed += (object sender, EventArgs e) => Window.Close();
-            Action Updates = () => { };
-            ImageBox box = new ImageBox(new Vector2f(100,100), new Vector2i(100,100), "TestImage.jpg");
-            _components.Add(box);
-            Updates += box.Update;
+            Action<object> Updates;
+            ImageBox box = new ImageBox(new Vector2f(100,100), new Vector2i(124,140), "TestImage.jpg");
+            //Console.WriteLine("*create box*");
+            IImageBox proxyBox = new ProxyImageBox(box);
+            //Console.WriteLine("*create proxy*");
+            //_components.Add(box);
+            _components.Add(proxyBox);
+
+            //Updates += box.Update;
+            Updates = proxyBox.Update;
             
             while(Window.IsOpen)
             {
                 Window.DispatchEvents();
-                Window.Clear(Color.White);
+                Window.Clear(Color.Black);
 
                 TryDrag();
-                Updates();
+                Updates(Keyboard.IsKeyPressed(Keyboard.Key.Space));
 
-                Window.Draw(box.Sprite);
-                    
+                //Window.Draw(box.Drawable);
+                Window.Draw(proxyBox.Drawable);
+
                 Window.Display();
             }
         }
@@ -46,6 +53,7 @@ namespace Drawer
                 {
                     if (component.IsMouseIn(mouseCoordinates))
                     {
+                        //Console.WriteLine("Drag");
                         component.Drag();
                     }
                 }
