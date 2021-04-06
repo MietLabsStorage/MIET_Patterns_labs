@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ContentModelStore">
+    <e p="C:\Users\maksi\AppData\Local\JetBrains\Rider2020.3\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\maksi\AppData\Local\JetBrains\Rider2020.3\resharper-host\Local\Transient\Rider\v203\SolutionCaches\_Decanat.757583711.00" t="ExcludeRecursive" />
+    <e p="C:\Users\maksi\Desktop\6 семестр\Patterns\Decanat" t="IncludeFlat">
+      <e p="Decanat" t="IncludeRecursive">
+        <e p="Achievement.cs" t="Include" />
+        <e p="AchievementState.cs" t="Include" />
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="Cathedra.cs" t="Include" />
+        <e p="Decanat.cs" t="Include" />
+        <e p="Decanat.csproj" t="IncludeRecursive" />
+        <e p="Discipline.cs" t="Include" />
+        <e p="IObservable.cs" t="Include" />
+        <e p="IObserver.cs" t="Include" />
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="Program.cs" t="Include" />
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+        </e>
+        <e p="StudyWeek.cs" t="Include" />
+        <e p="Teacher.cs" t="Include" />
+      </e>
+      <e p="Decanat.sln" t="IncludeFlat" />
+      <e p="packages" t="ExcludeRecursive" />
+    </e>
+  </component>
+</project>

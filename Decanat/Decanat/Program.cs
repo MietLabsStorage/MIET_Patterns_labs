@@ -1,6 +1,5 @@
-﻿using System.Collections.Generic;
-using Decanat.Properties;
-using System;
+﻿using System;
+using System.Collections.Generic;
 
 namespace Decanat
 {
@@ -8,8 +7,6 @@ namespace Decanat
     {
         public static void Main(string[] args)
         {
-            StudyWeek studyWeek = StudyWeek.Instance();
-
             List<Teacher> teachers = new List<Teacher>()
             {
                 new Teacher("Teacher1"),
@@ -19,7 +16,7 @@ namespace Decanat
 
             foreach (var teacher in teachers)
             {
-                studyWeek.AddObserver(teacher);
+                StudyWeek.Instance().AddObserver(teacher);
             }
 
             List<Cathedra> cathedras = new List<Cathedra>()
@@ -34,35 +31,34 @@ namespace Decanat
                 })
             };
             
-            AchievementsStats achievementsStats = AchievementsStats.Instance();
+            AchievementState achievementsStats = AchievementState.Instance();
 
             List<Discipline> disciplines = new List<Discipline>()
             {
-                new Discipline("d1", teachers[0]),
-                new Discipline("d2", teachers[1]),
-                new Discipline("d3", teachers[1]),
-                new Discipline("d4", teachers[2])
+                new Discipline("d1", teachers[0]){Groups = new List<string>(){"G1", "G2"}},
+                new Discipline("d2", teachers[1]){Groups = new List<string>(){"G3", "G2"}},
+                new Discipline("d3", teachers[1]){Groups = new List<string>(){"G4", "G3"}},
+                new Discipline("d4", teachers[2]){Groups = new List<string>(){"G1", "G4"}}
             };
 
             achievementsStats.Disciplines.AddRange(disciplines);
             
-            Decanat decanat = new Decanat();
-            achievementsStats.AddObserver(decanat);
+            achievementsStats.AddObserver(Decanat.Instance());
             foreach (var cathedra in cathedras)
             {
-                decanat.AddObserver(cathedra);
+                Decanat.Instance().AddObserver(cathedra);
             }
 
-            while (!studyWeek.IsSession)
+            while (!StudyWeek.Instance().IsSession)
             {
                 //new week begin
-                studyWeek.NewWeek();
+                StudyWeek.Instance().NewWeek();
                 //show info about current week achievements
-                Console.WriteLine(achievementsStats.Info(studyWeek.CurrentNum));
+                Console.WriteLine(achievementsStats.Info(StudyWeek.Instance().Num));
                 //show info message for current week for all cathedras
                 foreach (var cathedra in cathedras)
                 {
-                    Console.WriteLine(cathedra.MesInfo(studyWeek.CurrentNum));
+                    Console.WriteLine(cathedra.MesInfo(StudyWeek.Instance().Num));
                 }
             }
         }

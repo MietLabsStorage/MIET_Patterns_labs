@@ -1,7 +1,5 @@
-using System;
 using System.Collections.Generic;
 using System.Text;
-using Decanat.Properties;
 
 namespace Decanat
 {
@@ -17,23 +15,25 @@ namespace Decanat
             Teachers.AddRange(teachers);
         }
 
-        public void Update(object o)
+        public void Update()
         {
-
-            if (BadTeachers.ContainsKey(StudyWeek.Num))
+            foreach (var teacher in Decanat.Instance().Forgotters)
             {
-                BadTeachers[StudyWeek.Num].Add(o as Teacher);
-            }
-            else
-            {
-                BadTeachers.Add(StudyWeek.Num, new List<Teacher>());
+                if (BadTeachers.ContainsKey(StudyWeek.Instance().Num))
+                {
+                    BadTeachers[StudyWeek.Instance().Num].Add(teacher);
+                }
+                else
+                {
+                    BadTeachers.Add(StudyWeek.Instance().Num, new List<Teacher>());
+                }
             }
         }
         
         public string MesInfo()
         {
             StringBuilder str = new StringBuilder();
-            for (int i = 1; i <= StudyWeek.Num; i++)
+            for (int i = 1; i <= StudyWeek.Instance().Num; i++)
             {
                 str.Append($"{MesInfo(i)}\n");
             }
@@ -58,5 +58,7 @@ namespace Decanat
 
             return str.ToString();
         }
+
+
     }
 }

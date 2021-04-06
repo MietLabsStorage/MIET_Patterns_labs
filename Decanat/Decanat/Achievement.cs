@@ -1,33 +1,15 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
-using Decanat.Properties;
 
 namespace Decanat
 {
     public class Achievement
     {
-        /// <summary>
-        /// num of week
-        /// </summary>
         public int Week { get; set; }
-        
-        /// <summary>
-        /// group
-        /// </summary>
         public string Group { get; set; }
+        public List<double> Marks { get; } = new List<double>();
         
-        /// <summary>
-        /// marks
-        /// </summary>
-        public List<double> Marks { get; set; } = new List<double>();
-
-        /// <summary>
-        /// create new achievement
-        /// </summary>
-        /// <param name="week"></param>
-        /// <param name="groups"></param>
-        /// <returns></returns>
         public List<Achievement> CreateAchievements(int week, List<string> groups)
         {
             List<Achievement> achievements = new List<Achievement>();
@@ -49,7 +31,15 @@ namespace Decanat
             return achievements;
         }
 
-        private bool IsForgotten => new Random().Next(10) % 3 != 0;
+        private bool IsForgotten
+        {
+            get
+            {
+                var rnd = new Random().Next(10) % 3;
+                return rnd != 0;
+            }
+        }
+    
 
         public override string ToString()
         {

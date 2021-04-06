@@ -1,46 +1,58 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using Decanat.Properties;
 
 namespace Decanat
 {
-    public class Decanat:IObserver, IObservable
+    public class Decanat : IObserver, IObservable
     {
-        private List<IObserver> _observers { get; } = new List<IObserver>();
-        private List<Teacher> Forgotters { get; set; } = new List<Teacher>();
-        public void Update(Object o)
+        
+        private static Decanat _instance;
+
+        private Decanat()
         {
-            var disciplines = (o as AchievementsStats)?.Disciplines;
+        }
+ 
+        public static Decanat Instance()
+        {
+            return _instance ?? (_instance = new Decanat());
+        }
+        
+        public List<Teacher> Forgotters { get; } = new List<Teacher>();
+
+        public void Update()
+        {
+            Forgotters.Clear();
+            var disciplines = AchievementState.Instance().Disciplines;
             if (disciplines != null)
                 foreach (var discipline in disciplines.Where(x =>
                     x.Achievements.Count != x.Groups.Count))
                 {
                     Forgotters.Add(discipline.TeacherCurator);
                 }
+
             NotifyObservers();
         }
 
+        public List<IObserver> Observers { get; } = new List<IObserver>();
+
         public void AddObserver(IObserver o)
         {
-            _observers.Add(o);
+            Observers.Add(o);
         }
 
         public void RemoveObserver(IObserver o)
         {
-            _observers.Add(o);
+            Observers.Add(o);
         }
 
         public void NotifyObservers()
         {
             foreach (Teacher teacher in Forgotters)
             {
-                foreach (var o in _observers)
+                foreach (var o in Observers)
                 {
-                    if ((o as Cathedra)?.Teachers.Contains(teacher) ?? false)
-                    {
-                        o.Update(teacher);
-                    }
+                    o.Update();
                 }
             }
         }
