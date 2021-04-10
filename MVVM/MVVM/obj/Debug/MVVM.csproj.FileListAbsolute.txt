@@ -1,0 +1,15 @@
+C:\Users\maksi\Desktop\6 семестр\Patterns\MVVM\MVVM\bin\Debug\MVVM.exe.config
+C:\Users\maksi\Desktop\6 семестр\Patterns\MVVM\MVVM\bin\Debug\MVVM.exe
+C:\Users\maksi\Desktop\6 семестр\Patterns\MVVM\MVVM\bin\Debug\MVVM.pdb
+C:\Users\maksi\Desktop\6 семестр\Patterns\MVVM\MVVM\obj\Debug\MVVM.csprojAssemblyReference.cache
+C:\Users\maksi\Desktop\6 семестр\Patterns\MVVM\MVVM\obj\Debug\View\MainWindow.g.cs
+C:\Users\maksi\Desktop\6 семестр\Patterns\MVVM\MVVM\obj\Debug\App.g.cs
+C:\Users\maksi\Desktop\6 семестр\Patterns\MVVM\MVVM\obj\Debug\MVVM_MarkupCompile.cache
+C:\Users\maksi\Desktop\6 семестр\Patterns\MVVM\MVVM\obj\Debug\MVVM_MarkupCompile.lref
+C:\Users\maksi\Desktop\6 семестр\Patterns\MVVM\MVVM\obj\Debug\View\MainWindow.baml
+C:\Users\maksi\Desktop\6 семестр\Patterns\MVVM\MVVM\obj\Debug\MVVM.g.resources
+C:\Users\maksi\Desktop\6 семестр\Patterns\MVVM\MVVM\obj\Debug\MVVM.Properties.Resources.resources
+C:\Users\maksi\Desktop\6 семестр\Patterns\MVVM\MVVM\obj\Debug\MVVM.csproj.GenerateResource.cache
+C:\Users\maksi\Desktop\6 семестр\Patterns\MVVM\MVVM\obj\Debug\MVVM.csproj.CoreCompileInputs.cache
+C:\Users\maksi\Desktop\6 семестр\Patterns\MVVM\MVVM\obj\Debug\MVVM.exe
+C:\Users\maksi\Desktop\6 семестр\Patterns\MVVM\MVVM\obj\Debug\MVVM.pdb
