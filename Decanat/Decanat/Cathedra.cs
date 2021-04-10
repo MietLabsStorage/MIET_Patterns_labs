@@ -1,9 +1,12 @@
+﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace Decanat
 {
-    public class Cathedra: IObserver
+    public class Cathedra : IObserver
     {
         public List<Teacher> Teachers { get; } = new List<Teacher>();
         private Dictionary<int, List<Teacher>> BadTeachers { get; } = new Dictionary<int, List<Teacher>>();
@@ -17,19 +20,26 @@ namespace Decanat
 
         public void Update()
         {
-            foreach (var teacher in Decanat.Instance().Forgotters)
-            {
-                if (BadTeachers.ContainsKey(StudyWeek.Instance().Num))
+            if (Decanat.Instance().Forgotters.ContainsKey(this.Name)) {
+                foreach (var teacher in Decanat.Instance().Forgotters[this.Name])
                 {
-                    BadTeachers[StudyWeek.Instance().Num].Add(teacher);
-                }
-                else
-                {
-                    BadTeachers.Add(StudyWeek.Instance().Num, new List<Teacher>());
+                    if (BadTeachers.ContainsKey(StudyWeek.Instance().Num))
+                    {
+                        BadTeachers[StudyWeek.Instance().Num].Add(teacher);
+                    }
+                    else
+                    {
+                        BadTeachers.Add(StudyWeek.Instance().Num, new List<Teacher>());
+                        BadTeachers[StudyWeek.Instance().Num].Add(teacher);
+                    }
                 }
             }
+            else
+            {
+                BadTeachers.Add(StudyWeek.Instance().Num, new List<Teacher>());
+            }
         }
-        
+
         public string MesInfo()
         {
             StringBuilder str = new StringBuilder();
@@ -40,10 +50,10 @@ namespace Decanat
 
             return str.ToString();
         }
-        
+
         public string MesInfo(int week)
         {
-            StringBuilder str = new StringBuilder($"Week {week}: ");
+            StringBuilder str = new StringBuilder($"Cathedra: {Name} || Week {week}: ");
             if (BadTeachers[week].Count == 0)
             {
                 str.Append("all ok");
@@ -59,6 +69,10 @@ namespace Decanat
             return str.ToString();
         }
 
+        public override string ToString()
+        {
+            return this.Name;
+        }
 
     }
 }

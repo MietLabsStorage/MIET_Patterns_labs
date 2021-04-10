@@ -1,8 +1,12 @@
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace Decanat
 {
-    public class Teacher: IObserver
+    public class Teacher : IObserver
     {
         public string Fio { get; }
 
@@ -21,7 +25,7 @@ namespace Decanat
         /// <param name="o">preferably as study week</param>
         public void Update()
         {
-            var disciplines = AchievementState.Instance().Disciplines.Where(x => x.TeacherCurator == this);
+            var disciplines = AchievementState.Instance().Disciplines.Where(x => x.TeacherCurator.Fio.Equals(this.Fio));
             foreach (var discipline in disciplines)
             {
                 AchievementState.Instance().AddRecord(
@@ -29,7 +33,8 @@ namespace Decanat
                     new Achievement().CreateAchievements(
                         StudyWeek.Instance().Num,
                         discipline.Groups
-                    ));
+                    )
+                    );
             }
 
         }

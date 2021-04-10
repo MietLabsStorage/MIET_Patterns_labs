@@ -1,9 +1,12 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace Decanat
 {
-    public class StudyWeek: IObservable
+    public class StudyWeek : IObservable
     {
         private static StudyWeek _instance;
 
@@ -11,7 +14,7 @@ namespace Decanat
         {
             MaxWeek = weeks;
         }
- 
+
         public static StudyWeek Instance(int weeks = 18)
         {
             return _instance ?? (_instance = new StudyWeek(weeks));

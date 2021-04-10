@@ -6,8 +6,13 @@ using System.Threading.Tasks;
 
 namespace Decanat
 {
-    public interface IObserver
+    static class Rnd
     {
-        void Update();
+        public static Random Random { get; }
+
+        static Rnd()
+        {
+            Random = new Random();
+        }
     }
 }

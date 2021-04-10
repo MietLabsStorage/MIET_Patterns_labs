@@ -1,20 +1,22 @@
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace Decanat
 {
-    public class AchievementState: IObservable
+    class AchievementState: IObservable
     {
         public List<Discipline> Disciplines { get; } = new List<Discipline>();
-        
+
         private static AchievementState _instance;
-        private AchievementState() {}
+        private AchievementState() { }
         public static AchievementState Instance()
         {
             return _instance ?? (_instance = new AchievementState());
         }
-        
+
         public List<IObserver> Observers { get; } = new List<IObserver>();
         public void AddObserver(IObserver o)
         {
@@ -34,7 +36,7 @@ namespace Decanat
             }
         }
 
-        
+
         /// <summary>
         /// add record of achievements in discipline
         /// </summary>
@@ -42,7 +44,8 @@ namespace Decanat
         /// <param name="achievements"></param>
         public void AddRecord(Discipline discipline, List<Achievement> achievements)
         {
-            Disciplines.FirstOrDefault(x => x.Equals(discipline))?.Achievements.AddRange(achievements);
+            //Disciplines.FirstOrDefault(x => x.Equals(discipline))?.Achievements.AddRange(achievements);
+            Disciplines.FirstOrDefault(x => x.Name.Equals(discipline.Name))?.Achievements?.AddRange(achievements);
             NotifyObservers();
         }
 
@@ -56,7 +59,7 @@ namespace Decanat
 
             return str.ToString();
         }
-        
+
         public string Info(int week)
         {
             StringBuilder str = new StringBuilder($"******Week {week}******\n");
@@ -64,7 +67,6 @@ namespace Decanat
             {
                 str.Append($"{discipline.MesInfo(week)}\n");
             }
-
             return str.ToString();
         }
     }
